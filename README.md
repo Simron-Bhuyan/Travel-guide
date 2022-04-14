@@ -6,9 +6,9 @@
 
 #HOW TO RUN THIS APPLICATION IN THE LOCAL ENVIRONMENT
 
-#git clone https://github.com/Simron-Bhuyan/Travel-guide
-#cd Travel-guide
-#npm i
-#npm start
-#Before running this application make sure that you have nodeJs installed in your device. 
+<br />git clone https://github.com/Simron-Bhuyan/Travel-guide
+<br />cd Travel-guide
+<br />npm i
+<br />npm start
+<br />Before running this application make sure that you have nodeJs installed in your device. 
 
