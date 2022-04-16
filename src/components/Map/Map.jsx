@@ -11,42 +11,27 @@ import useStyles from './styles';
 const Maps = ({setCoordinates, setBounds ,coordinates}) => {
     const classes = useStyles();
     const isMobile = useMediaQuery('(min-width:600px)');
+      
+   
     return (
-        <Map
-    markers={[
-        {
-            position: [18.5314, 73.845],
-            draggable: true,
-            title: "Marker title",
-            onClick: e => {
-                console.log("clicked ");
-            },
-            onDragend: e => {
-                console.log("dragged");
-            }
-        }
-    ]}
-    />
-   )
-    // return (
-    //     <div className={classes.mapContainer}>
-    //     <GoogleMapReact
-    //     bootstrapURLKeys={{key:'AIzaSyC539uZlHvdZ4mP-wWAKGrVCFekmlUxbLs'}}
-    //     defaultCenter={coordinates}
-    //     center={coordinates}
-    //     defaultZoom={14}
-    //     margin={[50,50,50,50]}
-    //     options={''}
-    //     onChange={''}
-    //     onChildClick={(e)=>{
-    //         setCoordinates({ lat: e.center.lat, lng: e.center.lng });
-    //         setBounds({sw: e.marginBounds.sw, ne: e.marginBounds.ne  })
-    //     }}
-    //     >
+        <div className={classes.mapContainer}>
+        <GoogleMapReact
+        bootstrapURLKeys={{key:'AIzaSyC539uZlHvdZ4mP-wWAKGrVCFekmlUxbLs'}}
+        defaultCenter={coordinates}
+        center={coordinates}
+        defaultZoom={14}
+        margin={[50,50,50,50]}
+        options={''}
+        onChange={''}
+        onChildClick={(e)=>{
+            setCoordinates({ lat: e.center.lat, lng: e.center.lng });
+            setBounds({sw: e.marginBounds.sw, ne: e.marginBounds.ne  })
+        }}
+        >
         
-    //     </GoogleMapReact>
-    //     </div>
-    // );
+        </GoogleMapReact>
+        </div>
+    );
 }
 
 export default Maps;
