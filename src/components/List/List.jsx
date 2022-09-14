@@ -15,7 +15,15 @@ const List = ({places}) => {
     const classes = useStyles();
     const [type, setType] = useState('restaurants ');
     const [rating, setRating] = useState('');
-    
+    // const places=[
+    //     {name : 'New York'},
+    //     {name : 'New York City'},
+    //     {name : 'panama'},
+    //     {name : 'South Africa'},
+    //     {name : 'Africa'},
+    //     {name : 'India'},
+    //     {name : 'Afa'},
+    // ]
     
     return (
         <div className={
@@ -60,6 +68,7 @@ const List = ({places}) => {
                         key={i}
                         xs={12}>
                         <PlaceDetails place={place}/>
+                        
                     </Grid>
                 ))
             } </Grid>

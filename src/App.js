@@ -8,8 +8,8 @@ import Map from './components/Map/Map';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoordinates] = useState({lat: 0, lng: 0});
-    const [bounds, setBounds] = useState([]);
+    const [coordinates, setCoordinates] = useState({});
+    const [bounds, setBounds] = useState({});
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({
             coords: {
@@ -26,7 +26,7 @@ const App = () => {
             console.log(data);
             setPlaces(data);
         })
-    }, [bounds, coordinates]); // empty dependency array means we want to execute this only at the start
+    }, [coordinates,bounds]); // empty dependency array means we want to execute this only at the start
 
     return (
         <>
