@@ -6,9 +6,9 @@ import Rating from '@mui/material/Rating';
 
 import useStyles from './styles';
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place,selected, refProps}) => {
   const classes = useStyles();
-
+if(selected) refProps?.current ?.scrollIntoView({behaviour:'smooth', block: 'start'})
   return (
     <Card elevation={6}>
       <CardMedia
@@ -19,8 +19,8 @@ const PlaceDetails = ({ place }) => {
       <CardContent>
         <Typography gutterBottom variant="h5">{place.name}</Typography>
         <Box display="flex" justifyContent="space-between" my={2}>
-          <Rating name="read-only" value={Number(place.rating)} readOnly />
-          <Typography component="legend">{place.num_reviews} review{place.num_reviews > 1 && 's'}</Typography>
+        <Rating value={Number(place.rating)} readOnly />
+          <Typography gutterBottom variant="subtitle1">Out of {place.num_reviews}</Typography>
         </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography component="legend">Price</Typography>

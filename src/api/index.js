@@ -14,7 +14,7 @@ import axios from "axios"; // helps in making our calls
 //         'X-RapidAPI-Key': 'f1a3eee3c5mshd7fea95d13139d6p1f1e88jsn6b3ac6701689'
 //     }
 // }
-const URL = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
+// const URL = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary';
 
 // const options = {
 //     // method: 'GET',
@@ -43,12 +43,12 @@ const URL = 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary'
 //   }).catch(function (error) {   
 //       console.error(error);
 //   });
-export const getPlacesData = async (sw,ne) => {
+export const getPlacesData = async (type,sw,ne) => {
    //since we are using axios so the method will be automatically called to GET
         try { // request
             const {data: {
                     data
-                }} = await axios.get(URL,{
+                }} = await axios.get(`https:/${type}/travel-advisor.p.rapidapi.com/ /list-in-boundary`,{
                   // method: 'GET',
                   // url: 'https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary',
                   params: {
